@@ -55,6 +55,7 @@ public class Frog extends Animal implements Eater {
 
     public void eat (Fly fly) {
         if (fly.isDead()) {
+            return;
         }
         if (tongueSpeed > fly.getSpeed()) {
             System.out.println("The fly is caught!");
@@ -73,6 +74,10 @@ public class Frog extends Animal implements Eater {
         } else {
             return "My name is " + name + " and I'm a rare frog. I'm " + age + " months old and my tongue has a speed of " + tongueSpeed + ".";
         }
+    }
+
+    public static String getSpecies() {
+        return species;
     }
     public void setSpecies (String Newspecies) {
         this.species = Newspecies;
