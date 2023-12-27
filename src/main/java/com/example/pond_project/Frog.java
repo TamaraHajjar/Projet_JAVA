@@ -1,6 +1,6 @@
 package com.example.pond_project;
 
-public class Frog {
+public class Frog extends Animal implements Eater {
     //instance variables
     private String name;
     private int age;
@@ -12,7 +12,7 @@ public class Frog {
 
     //constructors
     public Frog (String name, int age, double tongueSpeed) {
-        this.name = name;
+        super(name);
         this.age = age;
         this.tongueSpeed = tongueSpeed;
 
@@ -62,17 +62,17 @@ public class Frog {
         System.out.println(isFroglet);
     }
 
-    public void eat (Fly f) {
-        if (f.isDead()) {
+    public void eat (Fly fly) {
+        if (fly.isDead()) {
         }
-        if (tongueSpeed > f.getSpeed()) {
+        if (tongueSpeed > fly.getSpeed()) {
             System.out.println("The fly is caught!");
-            if (f.getMass() >= (0.5*age)) {
+            if (fly.getMass() >= (0.5*age)) {
                 this.grow();
             }
-            f.setMass(0);
+            fly.setMass(0);
         } else {
-            f.grow(1);
+            fly.grow(1);
         }
     }
 
