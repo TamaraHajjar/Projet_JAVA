@@ -75,10 +75,6 @@ public class Frog extends Animal implements Eater {
             return "My name is " + name + " and I'm a rare frog. I'm " + age + " months old and my tongue has a speed of " + tongueSpeed + ".";
         }
     }
-
-    public static String getSpecies() {
-        return species;
-    }
     public void setSpecies (String Newspecies) {
         this.species = Newspecies;
     }
