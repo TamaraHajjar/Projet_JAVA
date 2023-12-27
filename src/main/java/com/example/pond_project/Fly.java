@@ -47,9 +47,9 @@ public class Fly extends Animal {
         }
     }
 
-    public void grow(int addMass) {
+    public void grow(int addedMass) {
         int i = 0;
-        while (i != addMass) {
+        while (i != addedMass) {
             mass++;
             if (mass <= 20) {
                 speed++;

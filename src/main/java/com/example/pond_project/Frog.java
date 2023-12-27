@@ -15,7 +15,7 @@ public class Frog extends Animal implements Eater {
         super(name);
         this.age = age;
         this.tongueSpeed = tongueSpeed;
-
+        this.isFroglet(age);
     }
 
     public Frog (String name, double ageInYears, double tongueSpeed) {
@@ -38,7 +38,7 @@ public class Frog extends Animal implements Eater {
     }
 
     public void grow (int month) {
-        age = age + month;
+        age += month;
         if (age<12) {
             tongueSpeed = tongueSpeed + (1*month);
         } else if (age >= 30) {
@@ -50,16 +50,7 @@ public class Frog extends Animal implements Eater {
     }
 
     public void grow () {
-        age = age + 1;
-        if (age<12) {
-            tongueSpeed = tongueSpeed + (1);
-        } else if (age >= 30) {
-            if ((tongueSpeed - (1*(age-30)) >= 5)) {
-                tongueSpeed = tongueSpeed - (1*(age-30));
-            }
-        }
-        this.isFroglet(age);
-        System.out.println(isFroglet);
+        grow(1);
     }
 
     public void eat (Fly fly) {
@@ -77,7 +68,7 @@ public class Frog extends Animal implements Eater {
     }
 
     public String toString() {
-        if (isFroglet == true) {
+        if (isFroglet) {
             return "My name is " + name + " and I'm a rare froglet! I'm " + age + " months old and my tongue has a speed of " + tongueSpeed + ".";
         } else {
             return "My name is " + name + " and I'm a rare frog. I'm " + age + " months old and my tongue has a speed of " + tongueSpeed + ".";
@@ -88,14 +79,8 @@ public class Frog extends Animal implements Eater {
         return species;
     }
 
-    public void setSpecies (String species) {
-        this.species = species;
+    public void setSpecies (String Newspecies) {
+        this.species = Newspecies;
     }
 
-    public static void main (String[] args) {
-        Frog frog1 = new Frog("Peepaw", 4.6, 5);
-        //frog1.grow();
-        System.out.println(frog1.toString());
-        System.out.println((int)(4.6*12));
-    }
 }
