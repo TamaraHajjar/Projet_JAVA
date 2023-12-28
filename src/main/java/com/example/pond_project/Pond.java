@@ -1,6 +1,23 @@
 package com.example.pond_project;
-
+/**
+ * La classe Pond est une classe principale qui contient et exécute des objets Frog et Fly,
+ * en simulant une série d'actions dans l'étang (the pond).
+ */
 public class Pond {
+    /**
+     * <b> Méthode principale qui agit comme suit : </b>
+     * <ul>
+     *     <li>
+     *         Crée 4 objets Frog.
+     *     </li>
+     *     <li>
+     *         Crée 3 objets Fly.
+     *     </li>
+     *     <li>
+     *         Effectue une série d'opérations spécifiées.
+     *     </li>
+     * </ul>
+     */
     public static void main (String[] args) {
         Frog peepo = new Frog("Peepo");
         Frog pepe = new Frog("Pepe", 10, 15);
